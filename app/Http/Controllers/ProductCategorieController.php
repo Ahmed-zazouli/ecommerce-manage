@@ -22,7 +22,7 @@ class ProductCategorieController extends Controller
     public function index()
     {       
         return view('product_categories.product_categorie' ,[
-          'product_categories' => Product_categorie::with('store_categorie')->get()
+          'product_categories' => Product_categorie::with('store_categorie')->paginate(10)
         ]);
     }
 

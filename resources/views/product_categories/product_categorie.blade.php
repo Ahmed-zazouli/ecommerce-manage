@@ -50,19 +50,19 @@
             <td>
               <div class="dropdown">
 
-                 <form action="{{route('product_categories.edit', $product_categorie)}}" method="get">
+                 <form action="{{route('product_categories.edit', $product_categorie)}}" method="get" style="display :initial">
                   @csrf
                 
-                  <button type="submit" class="btn btn-outline-secondary btn-sm" value="edit">
-                    <i class="bx bx-edit-alt me-1"></i>
+                  <button type="submit" class="btn btn-sm btn-icon edit-record" value="edit">
+                    <i class="bx bx-edit "></i>
                   </button>
               </form>
-              <form action="{{route('product_categories.destroy', $product_categorie)}}" method="post">
+              <form action="{{route('product_categories.destroy', $product_categorie)}}" method="post" style="display :initial">
                 @csrf
                 @method('delete')
-                  <button type="submit" class="btn btn-outline-secondary btn-sm" value="delete">
-                    <i class="bx bx-trash me-1"></i>
-                  </button>
+                <button type="submit" class="btn btn-sm btn-icon delete-record" value="delete">
+                  <i class="bx bx-trash "></i>
+                </button>
               </form>
                 <!--
                 <div class="dropdown-menu">
@@ -84,4 +84,5 @@
 </div>
 
   <!--/ Bootstrap Table with Header Dark -->
+  {{ $product_categories->links('pagination::bootstrap-5') }}
 @endsection

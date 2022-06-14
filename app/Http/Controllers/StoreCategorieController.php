@@ -22,7 +22,7 @@ class StoreCategorieController extends Controller
     public function index()
     {
         return view('store_categories.store_categorie' , [
-            'store_categories' => Store_categorie::get()
+            'store_categories' => Store_categorie::paginate(10)
         ]);
     }
 

@@ -82,4 +82,5 @@
     </div>
   </div>
   <!--/ Bootstrap Table with Header Dark -->
+  {{ $store_categories->links('pagination::bootstrap-5') }}
 @endsection

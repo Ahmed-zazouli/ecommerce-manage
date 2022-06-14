@@ -186,17 +186,17 @@
                 <ul class="menu-sub">
                   <li class="menu-item">
                     <a href={{ route('products.index') }} class="menu-link">
-                      <div data-i18n="Account">Products</div>
+                      <div data-i18n="Products">Products</div>
                     </a>
                   </li>
                   <li class="menu-item">
                     <a href="{{ route('product_categories.index') }}" class="menu-link">
-                      <div data-i18n="Notifications">Product Categories</div>
+                      <div data-i18n="Product Categories">Product Categories</div>
                     </a>
                   </li>
                   <li class="menu-item">
                     <a href="{{ route('store_categories.index') }}" class="menu-link">
-                      <div data-i18n="Connections">Store Categoies</div>
+                      <div data-i18n="Store Categoies">Store Categoies</div>
                     </a>
                   </li>
                 </ul>
@@ -204,22 +204,22 @@
               <li class="menu-item">
                 <a href={{ "javascript:void(0);" }} class="menu-link menu-toggle">
                   <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                  <div data-i18n="Account Settings">Users</div>
+                  <div data-i18n="Users">Users</div>
                 </a>
                 <ul class="menu-sub">
                   <li class="menu-item">
                     <a href={{route('users.index') }} class="menu-link">
-                      <div data-i18n="Account">Users</div>
+                      <div data-i18n="Users">Users</div>
                     </a>
                   </li>
                   <li class="menu-item">
                     <a href="pages-account-settings-notifications.html" class="menu-link">
-                      <div data-i18n="Notifications">User Adresses</div>
+                      <div data-i18n="User Adresses">User Adresses</div>
                     </a>
                   </li>
                   <li class="menu-item">
                     <a href="pages-account-settings-connections.html" class="menu-link">
-                      <div data-i18n="Connections">User Types</div>
+                      <div data-i18n="User Types">User Types</div>
                     </a>
                   </li>
                 </ul>
@@ -608,11 +608,11 @@
                   document.write(new Date().getFullYear());
                 </script>
                 , made with ❤️ by
-                <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
+                <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">sneat</a>
               </div>
               <div>
-                <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
-                <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
+                {{-- <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
+                <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a> --}}
 
                 <a
                   href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"

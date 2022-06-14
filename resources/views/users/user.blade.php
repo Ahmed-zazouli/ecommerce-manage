@@ -47,19 +47,19 @@
             <td>
               <div class="dropdown">
 
-                 <form action="{{route('users.edit', $user)}}" method="get">
+                 <form action="{{route('users.edit', $user)}}" method="get" style="display :initial">
                   @csrf
                 
-                  <button type="submit" class="btn btn-outline-secondary btn-sm" value="edit">
-                    <i class="bx bx-edit-alt me-1"></i>
+                  <button type="submit" class="btn btn-sm btn-icon edit-record" value="edit">
+                    <i class="bx bx-edit "></i>
                   </button>
               </form>
-              <form action="{{route('users.destroy', $user)}}" method="post">
+              <form action="{{route('users.destroy', $user)}}" method="post" style="display :initial">
                 @csrf
                 @method('delete')
-                  <button type="submit" class="btn btn-outline-secondary btn-sm" value="delete">
-                    <i class="bx bx-trash me-1"></i>
-                  </button>
+                <button type="submit" class="btn btn-sm btn-icon delete-record" value="delete">
+                  <i class="bx bx-trash "></i>
+                </button>
               </form>
                 <!--
                 <div class="dropdown-menu">
@@ -79,4 +79,5 @@
     </div>
   </div>
   <!--/ Bootstrap Table with Header Dark -->
+  {{ $users->links('pagination::bootstrap-5') }}
 @endsection
