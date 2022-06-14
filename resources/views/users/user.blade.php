@@ -15,7 +15,7 @@
           
             <a href={{ route('users.create') }} class="menu-link">
           <button type="sumbit" class="btn rounded-pill btn-outline-secondary">
-            <span class="tf-icons bx bx-bell"></span>&nbsp; Add User
+            <span class="bx bx-plus me-0 me-sm-2"></span>&nbsp; Add User
           </button>
         </a>
         </div>

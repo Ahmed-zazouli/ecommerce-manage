@@ -4,7 +4,7 @@
 
    <!-- Bootstrap Table with Header - Dark -->
    <div class="container-xxl flex-grow-1 container-p-y">
-    {{ $products->links() }}
+    
    <div class="card">
     <footer class="footer bg-light">
       <div
@@ -17,7 +17,7 @@
           
             <a href={{ route('products.create') }} class="menu-link">
           <button type="sumbit" class="btn rounded-pill btn-outline-secondary">
-            <span class="tf-icons bx bx-bell"></span>&nbsp; Add Product
+            <span class="bx bx-plus me-0 me-sm-2"></span>&nbsp; Add Product
           </button>
         </a>
         </div>
@@ -93,4 +93,7 @@
   </div>
   
   <!--/ Bootstrap Table with Header Dark -->
+  <nav aria-label="Page navigation example">
+  {{ $products->links() }}
+  </nav>
 @endsection
