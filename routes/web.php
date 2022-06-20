@@ -4,11 +4,13 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductCategorieController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StoreCategorieController;
+use App\Http\Controllers\UserAddressController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WorkFlowController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Product;
 use App\Models\Store_categorie;
+use App\Models\User_address;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -88,7 +90,8 @@ Route::prefix('admin')->group(function(){
     Route::resources([
         'products' => ProductController::class,
         'users' => UserController::class,
-        'work_flows' => WorkFlowController::class
+        'work_flows' => WorkFlowController::class,
+        'user_addresses' =>UserAddressController::class
         // 'product_categories' => ProductCategorieController::class ,
         // 'store_categories' => StoreCategorieController::class ,
     

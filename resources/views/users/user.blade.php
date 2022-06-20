@@ -41,7 +41,7 @@
             <td>{{ $user->name }}</td>
            
             <td>{{ $user->email }}</td>
-            <td>{{ $user->user_type->type }}</td>
+            <td>{{$user->user_type->type}}</td>
             <td>{{ $user->updated_at }}</td>
           
             <td>
@@ -51,24 +51,19 @@
                   @csrf
                 
                   <button type="submit" class="btn btn-sm btn-icon edit-record" value="edit">
-                    <i class="bx bx-edit "></i>
+                    <i class="bx bx-edit " title="update"></i>
                   </button>
               </form>
               <form action="{{route('users.destroy', $user)}}" method="post" style="display :initial">
                 @csrf
                 @method('delete')
                 <button type="submit" class="btn btn-sm btn-icon delete-record" value="delete">
-                  <i class="bx bx-trash "></i>
+                  <i class="bx bx-trash " title="delete"></i>
                 </button>
+
+
               </form>
-                <!--
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="javascript:void(0);"
-                    ><i class="bx bx-edit-alt me-1"></i> Edit</a
-                  >
-                  <a class="dropdown-item" href="javascript:void(0);"
-                    ><i class="bx bx-trash me-1"></i> Delete</a
-                  >-->
+            
                 </div>
               </div>
             </td>

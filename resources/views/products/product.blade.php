@@ -70,15 +70,44 @@
                 <button type="submit" class="btn btn-sm btn-icon delete-record" value="delete">
                   <i class="bx bx-trash "></i>
                 </button>
+                {{-- <button type="button" class="btn btn-sm btn-icon delete-record deleteP"                 
+                data-bs-toggle="modal" 
+                data-bs-target="#modalCenter">
+                  <i class="bx bx-trash "></i>
+                </button> --}}
+
+                 <!-- Modal for confirmation delete-->
+                 {{-- <div class="modal fade" id="modalCenter" tabindex="-5" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h3 class="modal-title" id="modalCenterTitle">Confirme la supprission</h3>
+                        <input type="text" name="product_delet_id" id="product_id"/>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        <h5 class="modal-title" >Voulez-vous vraiment supprimer ? </h5>
+                       
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                          Close
+                        </button>
+                        <button type="submit" class="btn btn-primary" value="delete">Confirme </button>
+                      </div>
+                    </div>
+                  </div>
+                </div> --}}
+             
+
+             <!-- Slide from Top Modal -->
               </form>
-                <!--
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="javascript:void(0);"
-                    ><i class="bx bx-edit-alt me-1"></i> Edit</a
-                  >
-                  <a class="dropdown-item" href="javascript:void(0);"
-                    ><i class="bx bx-trash me-1"></i> Delete</a
-                  >-->
+  
                 </div>
               </div>
             </td>
@@ -96,4 +125,22 @@
   
   {{ $products->links('pagination::bootstrap-5') }}
   
+@endsection
+
+@section('scripts')
+
+   <script>
+    // $(document).ready(function(){
+    //   $('.deleteP').click(function(e){
+    //     e.preventDefault();
+    //     var product_id =$(this).val();
+    //     $('#product_id').val(product_id);
+    //     // $('.modal-title').text(product_id);
+    //   });
+
+    // });
+
+
+   </script>
+
 @endsection

@@ -203,7 +203,9 @@
               </li>
               <li class="menu-item">
                 <a href={{ "javascript:void(0);" }} class="menu-link menu-toggle">
-                  <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                  <i class="menu-icon tf-icons bx bx-user"></i>
+                  {{-- <img src="../assets/img/icons/unicons/cart-add-regular-24.png" alt="Credit Card" class="menu-icon tf-icons" />
+                   --}}
                   <div data-i18n="Users">Users</div>
                 </a>
                 <ul class="menu-sub">
@@ -213,7 +215,7 @@
                     </a>
                   </li>
                   <li class="menu-item">
-                    <a href="pages-account-settings-notifications.html" class="menu-link">
+                    <a href="{{ route('user_addresses.index') }}" class="menu-link">
                       <div data-i18n="User Adresses">User Adresses</div>
                     </a>
                   </li>
@@ -666,5 +668,6 @@
 
   <!-- Place this tag in your head or just before your close body tag. -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
+  @yield('scripts')
 </body>
 </html>

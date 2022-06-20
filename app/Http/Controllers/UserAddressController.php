@@ -5,9 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\User_address;
 use App\Http\Requests\StoreUser_addressRequest;
 use App\Http\Requests\UpdateUser_addressRequest;
+use App\Models\User;
 
 class UserAddressController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +20,9 @@ class UserAddressController extends Controller
      */
     public function index()
     {
-        //
+        return view('user_addresses.user_address' ,[
+          'user_addresses' => User_address::with('user')->paginate(10)
+        ]);
     }
 
     /**
@@ -25,7 +32,9 @@ class UserAddressController extends Controller
      */
     public function create()
     {
-        //
+        return view('user_addresses.adduser_address' , [
+            'users' =>User::get()
+        ]);
     }
 
     /**
@@ -36,7 +45,8 @@ class UserAddressController extends Controller
      */
     public function store(StoreUser_addressRequest $request)
     {
-        //
+        User_address::create($request->all());
+        return to_route('user_addresses.index');
     }
 
     /**

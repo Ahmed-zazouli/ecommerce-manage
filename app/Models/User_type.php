@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class User_type extends Model
 {
     use HasFactory;
+    protected $guarded = [];
 
     public function user(){
         return $this->hasMany(User::class);
