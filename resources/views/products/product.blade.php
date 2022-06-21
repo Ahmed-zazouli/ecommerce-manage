@@ -35,6 +35,7 @@
             <th>price sell</th>
             <th>price buy</th>
             <th >sku</th>
+            <th >photo</th>
             <th >categorie</th>
             <th >updated_at</th>
             <th >action</th>
@@ -50,6 +51,7 @@
             <td>{{ $product->price_sell }}</td>
             <td>{{ $product->price_buy }}</td>
             <td>{{ $product->SKU}}</td>
+            <td><div class="avatar me-2"><img src="{{ $product->photo }}" alt="Avatar" class=""></div></td>
             <td>{{ $product->product_categorie->name }}</td>
             <td>{{ $product->updated_at }}</td>
            

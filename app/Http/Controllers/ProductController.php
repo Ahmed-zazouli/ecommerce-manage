@@ -51,7 +51,8 @@ class ProductController extends Controller
      */
     public function store(StoreProductRequest $request)
     {
-        $Product = Product::create( $request->all());
+        Product::create( $request->all());
+        (new WorkFlowController)->work_flow('create' ,'products');
         return to_route('products.index');
     }
 
@@ -106,6 +107,7 @@ class ProductController extends Controller
 
         
         $product->save();
+        (new WorkFlowController)->work_flow('update' ,'products');
 
         return to_route('products.index');
     }
@@ -119,6 +121,7 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         $product->delete() ;
+        (new WorkFlowController)->work_flow('delete' ,'products');
 
         return to_route('products.index');
     }

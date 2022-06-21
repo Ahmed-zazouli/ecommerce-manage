@@ -20,6 +20,7 @@ class ProductFactory extends Factory
             'name' => $this->faker->name(),
             'description' => $this->faker->text(),
             'SKU' => $this->faker->swiftBicNumber(),
+            'photo' => $this->faker->imageUrl(640, 480, 'animals', true),
             'product_categorie_id' => $this->faker->randomNumber(),
             'quantity' => $this->faker->numberBetween(1,200),
             'price_buy' => $this->faker->randomFloat(2 , 1.22 , 999.99),

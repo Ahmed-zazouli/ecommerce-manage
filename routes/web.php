@@ -83,6 +83,7 @@ Route::prefix('admin')->group(function(){
     Route::put('/store_categories/{store_categorie}', [StoreCategorieController::class , 'update'])->name('store_categories.update');
     Route::get('/store_categories/{store_categorie}/edit', [StoreCategorieController::class , 'edit'])->name('store_categories.edit');
 
+    Route::get('/my_profile/{user}', [UserController::class , 'my_profile'])->name('users.my_profile');
     
    
   

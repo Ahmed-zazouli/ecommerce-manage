@@ -46,7 +46,7 @@ class StoreCategorieController extends Controller
     {
         Store_categorie::create($request->all());       
 
-        (new WorkFlowController)->work_flow('create' ,'store_categorie');
+        (new WorkFlowController)->work_flow('create' ,'store_categories');
         
         return to_route('store_categories.index');
         
@@ -91,7 +91,7 @@ class StoreCategorieController extends Controller
 
         
         $store_categorie->save();
-        (new WorkFlowController)->work_flow('update' ,'store_categorie');
+        (new WorkFlowController)->work_flow('update' ,'store_categories');
         
         return to_route('store_categories.index');
     }
@@ -105,7 +105,7 @@ class StoreCategorieController extends Controller
     public function destroy(Store_categorie $store_categorie)
     {
         $store_categorie->delete();
-        (new WorkFlowController)->work_flow('delete' ,'store_categorie');
+        (new WorkFlowController)->work_flow('delete' ,'store_categories');
 
         return to_route('store_categories.index');
     }

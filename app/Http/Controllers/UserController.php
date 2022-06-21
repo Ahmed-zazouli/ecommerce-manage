@@ -5,12 +5,18 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
+use App\Models\User_address;
 use App\Models\User_type;
+use App\Models\Work_flow;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth'); 
+    }
     /**
      * Display a listing of the resource.
      *
@@ -49,6 +55,8 @@ class UserController extends Controller
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
         ]);
+
+        (new WorkFlowController)->work_flow('create' ,'users');
 
        
 
@@ -99,6 +107,7 @@ class UserController extends Controller
 
         
         $user->save();
+        (new WorkFlowController)->work_flow('update' ,'users');
 
         return to_route('users.index');
     }
@@ -112,8 +121,30 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $user->delete() ;
+        (new WorkFlowController)->work_flow('delete' ,'users');
 
         return to_route('users.index');
+    }
+
+   // return the user with he is adress 
+    public function my_profile(User $user){
+
+        $user_address = User_address::where ('user_id', $user->id)->get();
+        $user_type = User_type::find($user->user_type_id);
+        $work_flow = Work_flow::where('user_id' , $user->id)->get();
+       // $profile = User::with('User_address')->with('user_type')->where('id', $user->id)->get();
+      
+        $data=[
+             'user' => $user,
+             'user_address' => $user_address[0] ,
+             'user_type' => $user_type ,
+             'work_flows' => $work_flow
+        ];
+       
+        // echo "<pre>";
+        // print_r($profile[0]->user_type->type) ;
+        // echo "</pre>";
+         return view('users.profile' ,$data);
     }
 
 
@@ -124,3 +155,7 @@ class UserController extends Controller
     //    return to_route('admin');
     // }
 }
+
+
+
+

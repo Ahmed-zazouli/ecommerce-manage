@@ -63,7 +63,12 @@
 
 
               </form>
-            
+              <form action="{{route('users.my_profile', $user)}}" method="get" style="display :initial">
+                @csrf
+              {{-- <button class="btn btn-label-primary btn-icon btn-sm"><i class="bx bx-user"></i></button> --}}
+                <button type="submit" class="btn btn-primary btn-icon btn-sm" value="profile">
+                  <i class="bx bx-user" title="Profile"></i></button>
+              </form>
                 </div>
               </div>
             </td>

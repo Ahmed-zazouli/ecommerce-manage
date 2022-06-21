@@ -25,7 +25,7 @@
     </footer>
    
     <div class="table-responsive text-nowrap">
-      <table class="table">
+      <table class="table ">
         <thead class="table-dark">
           <tr>
             <th>id </th>
@@ -94,5 +94,7 @@
   <!--/ Bootstrap Table with Header Dark -->
   
   {{ $user_addresses->links('pagination::bootstrap-5') }}
+
+  
   
 @endsection

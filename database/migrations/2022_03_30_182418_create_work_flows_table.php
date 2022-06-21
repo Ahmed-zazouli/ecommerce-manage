@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('work_flows', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger("user_id");           
-            $table->integer('event_name' , 50);           
+            $table->unsignedBigInteger("user_id");
+            $table->foreign('user_id')->references('id')->on('users');           
+            $table->string('event_name' , 50);           
             $table->string('event_table' , 50);
             $table->timestamps();
         });

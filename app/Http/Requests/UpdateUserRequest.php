@@ -14,7 +14,7 @@ class UpdateUserRequest extends FormRequest
      */
     public function authorize()
     {
-        if (Auth::user()->user_type_id == 4 ) {
+        if (Auth::user()->user_type_id == 2 ) {
             return true;
         }else{  
             return false;

@@ -11,6 +11,10 @@ use Illuminate\Support\Facades\DB;
 
 class WorkFlowController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth'); 
+    }
 
     public function work_flow($event_name , $event_table){
         // $requestt =array();

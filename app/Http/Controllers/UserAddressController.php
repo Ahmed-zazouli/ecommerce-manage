@@ -46,6 +46,7 @@ class UserAddressController extends Controller
     public function store(StoreUser_addressRequest $request)
     {
         User_address::create($request->all());
+        (new WorkFlowController)->work_flow('create' ,'user_adress');
         return to_route('user_addresses.index');
     }
 
@@ -68,7 +69,12 @@ class UserAddressController extends Controller
      */
     public function edit(User_address $user_address)
     {
-        //
+        $data=[
+            'user_address'=>$user_address
+        ];
+        return view('user_addresses.updateuser_address' , $data ,[
+            'users' => User::get()
+        ]);
     }
 
     /**
@@ -80,7 +86,20 @@ class UserAddressController extends Controller
      */
     public function update(UpdateUser_addressRequest $request, User_address $user_address)
     {
-        //
+        $user_address->user_id = $request->input('user_id');
+        $user_address->country = $request->input('country');
+        $user_address->city = $request->input('city');
+        $user_address->postal_code = $request->input('postal_code');
+        $user_address->address = $request->input('address');
+        $user_address->telephone1 = $request->input('telephone1');
+        $user_address->telephone2 = $request->input('telephone2');
+        
+
+        
+        $user_address->save();
+        (new WorkFlowController)->work_flow('update' ,'user_adress');
+
+        return to_route('user_addresses.index');
     }
 
     /**
@@ -91,6 +110,12 @@ class UserAddressController extends Controller
      */
     public function destroy(User_address $user_address)
     {
-        //
+        $user_address->delete();
+        (new WorkFlowController)->work_flow('delete' ,'user_adress');
+
+        return to_route('user_addresses.index');
+
     }
+
+  
 }

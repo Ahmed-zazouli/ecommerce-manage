@@ -20,6 +20,9 @@ class User extends Authenticatable
     public function user_address(){
         return $this->hasOne(User_address::class);
     }
+    public function userAddress(){
+        return $this->hasOne(User_address::class);
+    }
 
     public function user_payment(){
         return $this->hasOne(User_payment::class);
