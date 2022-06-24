@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StoreCategorieController;
 use App\Http\Controllers\UserAddressController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserTypeController;
 use App\Http\Controllers\WorkFlowController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Product;
@@ -92,7 +93,8 @@ Route::prefix('admin')->group(function(){
         'products' => ProductController::class,
         'users' => UserController::class,
         'work_flows' => WorkFlowController::class,
-        'user_addresses' =>UserAddressController::class
+        'user_addresses' => UserAddressController::class,
+        'user_types' => UserTypeController::class
         // 'product_categories' => ProductCategorieController::class ,
         // 'store_categories' => StoreCategorieController::class ,
     

@@ -132,17 +132,18 @@ class UserController extends Controller
         $user_address = User_address::where ('user_id', $user->id)->get();
         $user_type = User_type::find($user->user_type_id);
         $work_flow = Work_flow::where('user_id' , $user->id)->get();
+
        // $profile = User::with('User_address')->with('user_type')->where('id', $user->id)->get();
       
         $data=[
              'user' => $user,
-             'user_address' => $user_address[0] ,
+             'user_addresses' => $user_address ,
              'user_type' => $user_type ,
              'work_flows' => $work_flow
         ];
        
         // echo "<pre>";
-        // print_r($profile[0]->user_type->type) ;
+        // print_r($user1) ;
         // echo "</pre>";
          return view('users.profile' ,$data);
     }

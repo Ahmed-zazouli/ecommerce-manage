@@ -220,7 +220,7 @@
                     </a>
                   </li>
                   <li class="menu-item">
-                    <a href="pages-account-settings-connections.html" class="menu-link">
+                    <a href="{{ route('user_types.index') }}" class="menu-link">
                       <div data-i18n="User Types">User Types</div>
                     </a>
                   </li>
@@ -570,7 +570,7 @@
                         <span class="align-middle">Settings</span>
                       </a>
                     </li>
-                    <li>
+                    {{-- <li>
                       <a class="dropdown-item" href="#">
                         <span class="d-flex align-items-center align-middle">
                           <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
@@ -578,7 +578,7 @@
                           <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
                         </span>
                       </a>
-                    </li>
+                    </li> --}}
                     <li>
                       <div class="dropdown-divider"></div>
                     </li>

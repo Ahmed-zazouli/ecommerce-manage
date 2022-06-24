@@ -13,7 +13,7 @@ class UpdateUser_paymentRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**

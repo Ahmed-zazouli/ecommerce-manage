@@ -69,6 +69,7 @@
                 <button type="submit" class="btn btn-primary btn-icon btn-sm" value="profile">
                   <i class="bx bx-user" title="Profile"></i></button>
               </form>
+              
                 </div>
               </div>
             </td>

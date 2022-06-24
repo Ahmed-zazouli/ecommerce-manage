@@ -5,9 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\User_type;
 use App\Http\Requests\StoreUser_typeRequest;
 use App\Http\Requests\UpdateUser_typeRequest;
+use GuzzleHttp\Middleware;
 
 class UserTypeController extends Controller
 {
+    public function __construct()
+    {
+        $this->Middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +20,9 @@ class UserTypeController extends Controller
      */
     public function index()
     {
-        //
+        return view('user_types.user_type' , [
+           'user_types' => User_type::paginate(10) 
+        ]);
     }
 
     /**
@@ -25,7 +32,7 @@ class UserTypeController extends Controller
      */
     public function create()
     {
-        //
+        return view('user_types.adduser_type');
     }
 
     /**
@@ -36,7 +43,18 @@ class UserTypeController extends Controller
      */
     public function store(StoreUser_typeRequest $request)
     {
-        //
+        $active = 0;
+        if($request['active'] == 'on'){
+            $active = 1;
+        }
+        User_type::create([
+            'type' => $request['type'],
+            'permission' => $request['permission'],
+            'active' => $active
+        ]);
+
+        (new WorkFlowController)->work_flow('create' ,'user_types');
+        return to_route('user_types.index');
     }
 
     /**
@@ -58,7 +76,11 @@ class UserTypeController extends Controller
      */
     public function edit(User_type $user_type)
     {
-        //
+        $data=[
+            'user_type' => $user_type
+        ];
+
+        return view('user_types.updateuser_type' , $data);
     }
 
     /**
@@ -70,7 +92,17 @@ class UserTypeController extends Controller
      */
     public function update(UpdateUser_typeRequest $request, User_type $user_type)
     {
-        //
+        $user_type->type = $request['type'];
+        $user_type->permission = $request['permission'];
+        $active = 0;
+        if($request['active'] == 'on'){
+            $active = 1;
+        }
+        $user_type->active = $active;
+
+        $user_type->save();
+        (new WorkFlowController)->work_flow('update' ,'user_types');
+        return to_route('user_types.index');
     }
 
     /**
@@ -81,6 +113,7 @@ class UserTypeController extends Controller
      */
     public function destroy(User_type $user_type)
     {
-        //
+        $user_type->delete();
+        return to_route('user_types.index');
     }
 }
