@@ -19,8 +19,8 @@ class User_paymentFactory extends Factory
         return [
             'user_id' => null,
             'payment_type' => $this->faker->creditCardType(),
-            'provider' => 'jh',
-            'account_no' => $this->faker->creditCardNumber(),
+            'provider' => $this->faker->creditCardNumber(),
+            'account_no' => 'cash',
             'expiry_date' => $this->faker->creditCardExpirationDate(),
         ];
     }

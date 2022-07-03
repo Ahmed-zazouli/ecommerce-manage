@@ -8,12 +8,13 @@ use App\Http\Requests\UpdateProductRequest;
 use App\Models\Discount;
 use App\Models\Product_categorie;
 use GuzzleHttp\Psr7\Request;
+use App\Http\Requests\ImageUploadRequest;
 
 class ProductController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth'); 
+        $this->middleware('auth');
     }
     /**
      * Display a listing of the resource.
@@ -37,8 +38,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('products.addproduct',[
-            'categories' => Product_categorie::get() ,
+        return view('products.addproduct', [
+            'categories' => Product_categorie::get(),
             'discounts' => Discount::get()
         ]);
     }
@@ -51,9 +52,28 @@ class ProductController extends Controller
      */
     public function store(StoreProductRequest $request)
     {
-        Product::create( $request->all());
-        (new WorkFlowController)->work_flow('create' ,'products');
-        return to_route('products.index');
+        // $validatedData = $request->validate([
+        //     'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+    
+        //    ]);
+    
+           $name = $request->file('image')->getClientOriginalName();
+    
+           $path = $request->file('image')->store('public/images');
+
+           return $path;
+    
+    
+        //    $save = new Product();
+    
+        //    $save->image = $name;
+        //    $save->image = $path;
+    
+        //    $save->save();
+
+        // Product::create($request->all());
+        // (new WorkFlowController)->work_flow('create', 'products');
+        // return to_route('products.index');
     }
 
     /**
@@ -75,11 +95,11 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        $data=[
-            'product'=>$product
+        $data = [
+            'product' => $product
         ];
-        return view('products.updateproduct' , $data ,[
-            'categories' => Product_categorie::get() ,
+        return view('products.updateproduct', $data, [
+            'categories' => Product_categorie::get(),
             'discounts' => Discount::get()
         ]);
     }
@@ -93,9 +113,9 @@ class ProductController extends Controller
      */
     public function update(UpdateProductRequest $request, Product $product)
     {
-        
-       // $Product = Product::find($product);
-        
+
+        // $Product = Product::find($product);
+
         $product->name = $request->input('name');
         $product->description = $request->input('description');
         $product->SKU = $request->input('SKU');
@@ -105,9 +125,10 @@ class ProductController extends Controller
         $product->price_buy = $request->input('price_buy');
         $product->discount_id = $request->input('discount_id');
 
-        
+
+
         $product->save();
-        (new WorkFlowController)->work_flow('update' ,'products');
+        (new WorkFlowController)->work_flow('update', 'products');
 
         return to_route('products.index');
     }
@@ -120,8 +141,8 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        $product->delete() ;
-        (new WorkFlowController)->work_flow('delete' ,'products');
+        $product->delete();
+        (new WorkFlowController)->work_flow('delete', 'products');
 
         return to_route('products.index');
     }

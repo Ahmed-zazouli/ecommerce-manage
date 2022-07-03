@@ -126,7 +126,7 @@
             </div></br></br>
             <!-- /Logo -->
             <h4 class="mb-2">Welcome to Sneat! 👋</h4>
-            <p class="mb-4">Please sign-in to your account and start the adventure</p>
+            <p class="mb-4">Please sign-in to your account </p>
 
 
 

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name' , 100);
             $table->text('description' ,250);
             $table->string('SKU' , 50);
-            $table->string('photo' , 100);
+            $table->string('image' , 100)->nullable();
             $table->unsignedBigInteger("product_categorie_id");
             $table->foreign('product_categorie_id')->references('id')->on('product_categories');
             $table->integer('quantity');

@@ -1,13 +1,16 @@
 <?php
 
+use App\Http\Controllers\DiscountController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductCategorieController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StoreCategorieController;
 use App\Http\Controllers\UserAddressController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserPaymentController;
 use App\Http\Controllers\UserTypeController;
 use App\Http\Controllers\WorkFlowController;
+use App\Models\Discount;
 use Illuminate\Support\Facades\Route;
 use App\Models\Product;
 use App\Models\Store_categorie;
@@ -94,7 +97,9 @@ Route::prefix('admin')->group(function(){
         'users' => UserController::class,
         'work_flows' => WorkFlowController::class,
         'user_addresses' => UserAddressController::class,
-        'user_types' => UserTypeController::class
+        'user_types' => UserTypeController::class,
+        'discounts' => DiscountController::class,
+        'user_payments' => UserPaymentController::class
         // 'product_categories' => ProductCategorieController::class ,
         // 'store_categories' => StoreCategorieController::class ,
     

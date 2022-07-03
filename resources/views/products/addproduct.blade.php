@@ -22,11 +22,11 @@
                 
               <div class="mb-3">
                 <label class="form-label" for="basic-default-fullname">Product Name</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="" />
+                <input type="text" value="{{ old('name') }}" class="form-control" id="name" name="name" placeholder="" />
               </div>
               <div class="mb-3">
                 <label class="form-label" for="SKU">SKU</label>
-                <input type="text" class="form-control" id="SKU" name="SKU" placeholder="HADGZRBHE58" />
+                <input type="text" value="{{ old('SKU') }}" class="form-control" id="SKU" name="SKU" placeholder="HADGZRBHE58" />
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlSelect1" class="form-label">Discount</label>
@@ -42,6 +42,7 @@
                 <label class="form-label" for="quantity">Quantity</label>
                 <input
                   type="number"
+                  value="{{ old('quantity') }}"
                   id="basic-default-phone"
                   class="form-control phone-mask"
                   placeholder="41"
@@ -54,7 +55,7 @@
                   <div class="input-group input-group-merge speech-to-text">
                     <textarea class="form-control"
                      placeholder="How do you Describe The Product?"
-                     rows="2" name="description"> </textarea>
+                     rows="2" name="description"> {{ old('description') }} </textarea>
                     <span class="input-group-text">
                       <i class="bx bx-microphone cursor-pointer text-to-speech-toggle"></i>
                     </span>
@@ -74,6 +75,21 @@
             <small class="text-muted float-end">Merged input group</small>
           </div>
           <div class="card-body">
+
+            <div class="mb-3">
+              <label class="form-label" for="image">Image</label>
+              <input
+                type="file"
+                value="{{ old('image') }}"
+                id="image"
+                class="form-control phone-mask"
+                placeholder="Choose image"
+                name="image"
+              />
+              @error('image')
+              <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+              @enderror
+            </div>
             
                 
               <div class="mb-3">
@@ -94,6 +110,7 @@
                   <span class="input-group-text">MAD</span>
                   <input
                     type="text"
+                    value="{{ old('price_sell') }}"
                     id="basic-icon-default-company"
                     class="form-control"
                     name="price_sell"
@@ -110,6 +127,7 @@
                   <span class="input-group-text">MAD</span>
                   <input
                     type="text"
+                    value="{{ old('price_buy') }}"
                     id="basic-icon-default-company"
                     class="form-control"
                     name="price_buy"

@@ -66,7 +66,7 @@
                             </div>
                           </div>
                           <span class="fw-semibold d-block mb-1">Profit</span>
-                          <h3 class="card-title mb-2">MAD12,628</h3>
+                          <h5 class="card-title mb-2">MAD12,628</h5>
                           <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +72.80%</small>
                         </div>
                       </div>
@@ -100,7 +100,7 @@
                             </div>
                           </div>
                           <span>Sales</span>
-                          <h3 class="card-title text-nowrap mb-1">MAD4,679</h3>
+                          <h5 class="card-title text-nowrap mb-1">MAD4,679</h5>
                           <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +28.42%</small>
                         </div>
                       </div>
@@ -192,7 +192,7 @@
                             </div>
                           </div>
                           <span class="d-block mb-1">Payments</span>
-                          <h3 class="card-title text-nowrap mb-2">MAD2,456</h3>
+                          <h5 class="card-title text-nowrap mb-2">MAD2,456</h5>
                           <small class="text-danger fw-semibold"><i class="bx bx-down-arrow-alt"></i> -14.82%</small>
                         </div>
                       </div>
@@ -222,7 +222,7 @@
                             </div>
                           </div>
                           <span class="fw-semibold d-block mb-1">Transactions</span>
-                          <h3 class="card-title mb-2">MAD14,857</h3>
+                          <h5 class="card-title mb-2">MAD14,857</h5>
                           <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +28.14%</small>
                         </div>
                       </div>
@@ -242,7 +242,7 @@
                                 <small class="text-success text-nowrap fw-semibold"
                                   ><i class="bx bx-chevron-up"></i> 68.2%</small
                                 >
-                                <h3 class="mb-0">MAD84,686k</h3>
+                                <h5 class="mb-0">MAD84,686k</h5>
                               </div>
                             </div>
                             <div id="profileReportChart"></div>

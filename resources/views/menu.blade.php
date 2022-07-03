@@ -199,13 +199,52 @@
                       <div data-i18n="Store Categoies">Store Categoies</div>
                     </a>
                   </li>
+                  <li class="menu-item">
+                    <a href="{{ route('discounts.index') }}" class="menu-link">
+                      <div data-i18n="discounts">Discounts</div>
+                    </a>
+                  </li>
                 </ul>
               </li>
+              <!-- Orders -->
               <li class="menu-item">
                 <a href={{ "javascript:void(0);" }} class="menu-link menu-toggle">
-                  <i class="menu-icon tf-icons bx bx-user"></i>
-                  {{-- <img src="../assets/img/icons/unicons/cart-add-regular-24.png" alt="Credit Card" class="menu-icon tf-icons" />
-                   --}}
+                  <img src="{{ asset('assets/img/icons/unicons/cart-download-regular-24.png') }}"  class="menu-icon tf-icons" />
+                  <div data-i18n="Users">Orders</div>
+                </a>
+                <ul class="menu-sub">
+                  <li class="menu-item">
+                    <a href={{route('users.index') }} class="menu-link">
+                      <div data-i18n="Users">Order Details</div>
+                    </a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="{{ route('user_addresses.index') }}" class="menu-link">
+                      <div data-i18n="User Adresses">Order Ithems</div>
+                    </a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="{{ route('user_types.index') }}" class="menu-link">
+                      <div data-i18n="User Types">Payment details</div>
+                    </a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="{{ route('user_types.index') }}" class="menu-link">
+                      <div data-i18n="User Types">Cart Items</div>
+                    </a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="{{ route('user_types.index') }}" class="menu-link">
+                      <div data-i18n="User Types">Shopping Sessions</div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <!-- Users -->
+              <li class="menu-item">
+                <a href={{ "javascript:void(0);" }} class="menu-link menu-toggle">
+                  
+                  <i class="menu-icon tf-icons bx bx-user"></i>                 
                   <div data-i18n="Users">Users</div>
                 </a>
                 <ul class="menu-sub">
@@ -222,6 +261,11 @@
                   <li class="menu-item">
                     <a href="{{ route('user_types.index') }}" class="menu-link">
                       <div data-i18n="User Types">User Types</div>
+                    </a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="{{ route('user_payments.index') }}" class="menu-link">
+                      <div data-i18n="User Payments">User Payments</div>
                     </a>
                   </li>
                 </ul>
