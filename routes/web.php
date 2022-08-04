@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DiscountController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderDetailController;
 use App\Http\Controllers\ProductCategorieController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StoreCategorieController;
@@ -99,7 +100,8 @@ Route::prefix('admin')->group(function(){
         'user_addresses' => UserAddressController::class,
         'user_types' => UserTypeController::class,
         'discounts' => DiscountController::class,
-        'user_payments' => UserPaymentController::class
+        'user_payments' => UserPaymentController::class,
+        'order_details' => OrderDetailController::class
         // 'product_categories' => ProductCategorieController::class ,
         // 'store_categories' => StoreCategorieController::class ,
     

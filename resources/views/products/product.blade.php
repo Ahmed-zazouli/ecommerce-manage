@@ -51,7 +51,7 @@
             <td>{{ $product->price_sell }}</td>
             <td>{{ $product->price_buy }}</td>
             <td>{{ $product->SKU}}</td>
-            <td><div class="avatar me-2"><img src="{{ $product->photo }}" alt="Avatar" class=""></div></td>
+            <td><div class="avatar me-2"><img src="{{ asset('storage/images/'.$product->image)  }}" alt="Avatar" class=""></div></td>
             <td>{{ $product->product_categorie->name }}</td>
             <td>{{ $product->updated_at }}</td>
            

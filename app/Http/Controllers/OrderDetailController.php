@@ -8,6 +8,10 @@ use App\Http\Requests\UpdateOrder_detailRequest;
 
 class OrderDetailController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +19,9 @@ class OrderDetailController extends Controller
      */
     public function index()
     {
-        //
+       return view('order_details.order_detail' ,[
+        'order_details' => Order_detail::with('user')
+       ]);
     }
 
     /**

@@ -57,23 +57,33 @@ class ProductController extends Controller
     
         //    ]);
     
-           $name = $request->file('image')->getClientOriginalName();
-    
-           $path = $request->file('image')->store('public/images');
+        
+        
+        $file= $request->hasFile('image');
+        if ($file) {
+           $newFile = $request->file('image');
+           
+            $file_name = $newFile->getClientOriginalName();
+            $newFile->storeAs('images',$file_name , 'public');
 
-           return $path;
-    
-    
-        //    $save = new Product();
-    
-        //    $save->image = $name;
-        //    $save->image = $path;
-    
-        //    $save->save();
-
+            Product::create([
+                'name' => $request->input('name'),
+                'description' => $request->input('description'),
+                'SKU' => $request->input('SKU'),
+                'image' => $file_name,
+                'product_categorie_id' => $request->input('product_categorie_id'),
+                'quantity' => $request->input('quantity'),
+                'price_sell' => $request->input('price_sell'),
+                'price_buy' => $request->input('price_buy'),
+                'discount_id' => $request->input('discount_id')
+        
+                ]); 
+           
+        }
+       
         // Product::create($request->all());
-        // (new WorkFlowController)->work_flow('create', 'products');
-        // return to_route('products.index');
+        (new WorkFlowController)->work_flow('create', 'products');
+        return to_route('products.index');
     }
 
     /**

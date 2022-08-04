@@ -214,7 +214,7 @@
                 </a>
                 <ul class="menu-sub">
                   <li class="menu-item">
-                    <a href={{route('users.index') }} class="menu-link">
+                    <a href="{{route('order_details.index') }}" class="menu-link">
                       <div data-i18n="Users">Order Details</div>
                     </a>
                   </li>

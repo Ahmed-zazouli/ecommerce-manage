@@ -7,7 +7,7 @@
     <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Products/</span> Product</h4>
 
     <!-- Basic Layout -->
-    <form action={{route('products.store') }} method="POST">
+    <form action={{route('products.store') }} method="POST" enctype="multipart/form-data">
         @csrf  
     <div class="row">
      
