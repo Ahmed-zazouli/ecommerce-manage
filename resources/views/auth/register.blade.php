@@ -131,7 +131,7 @@
             <form method="POST" action="{{ route('register') }}">
                 @csrf
 
-                <div class="mb-3">
+                {{-- <div class="mb-3">
                   <label for="exampleFormControlSelect1" class="form-label">User Type</label>
                   <select class="form-select" id="exampleFormControlSelect1" aria-label="Default select example"  id="user_type" name="user_type_id">
                     <option selected>Open this select menu</option>
@@ -139,7 +139,7 @@
                     <option value={{ $type->id }}>{{ $type->type }}</option>
                     @endforeach
                   </select>
-                </div>
+                </div> --}}
                 
                 <div class="mb-3">
                     <label for="name" class="form-label ">{{ __('Name') }}</label>                   

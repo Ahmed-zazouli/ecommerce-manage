@@ -17,10 +17,10 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'email' => "test@gmail.com",
-            'password' => "123",
-            'name' => "Ahmed Zazouli",
-            'user_type_id' => 1,
+            'email' => "$this->faker->email()",
+            'password' => $this->faker->password(),
+            'name' => $this->faker->name(),
+            'user_type_id' => $this->faker->randomNumber(),
             
         ];
     }

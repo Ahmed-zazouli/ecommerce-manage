@@ -18,9 +18,9 @@ class User_typeFactory extends Factory
     public function definition()
     {
         return [
-            'type' => "Admin",
-            'permission' => "test",
-            'active' => true,
+            'type' => $this->faker->randomElement($array = array ('Admin','user','client')),
+            'permission' => Str::random(10),
+            'active' => $this->faker->boolean(),
         ];
     }
 }
